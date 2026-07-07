@@ -1,23 +1,35 @@
 # homebrew-tap
 
-Homebrew tap for [Sync Pathguard](https://github.com/msjang/sync-pathguard) —
-a menu-bar/CLI guard for NFD filename lengths that break cloud/NAS sync.
+msjang's [Homebrew](https://brew.sh) tap — a single place for my apps and CLI
+tools. Each package's full docs live in its own repo; this README is just the
+index.
 
-## Install
+## Usage
+
+Tap once, then install anything below:
 
 ```bash
 brew tap msjang/tap
-brew install --cask sync-pathguard   # menu-bar app
-brew install pathguard               # CLI
 ```
 
-The cask clears the quarantine flag after install, since the app is currently
-**unsigned** (Gatekeeper would otherwise block it).
+## Packages
 
-## Maintainer notes
+| Package | Type | Install | What it is |
+|---|---|---|---|
+| [sync-pathguard](https://github.com/msjang/sync-pathguard) | Cask (app) | `brew install --cask sync-pathguard` | Menu-bar guard for NFD filename lengths that break cloud/NAS sync |
+| [pathguard](https://github.com/msjang/sync-pathguard) | Formula (CLI) | `brew install pathguard` | CLI version of the above (scriptable, CI-friendly) |
 
-On each new `sync-pathguard` release, bump `version` and the `sha256` values in
-`Casks/sync-pathguard.rb` and `Formula/pathguard.rb`. Get the hashes with:
+<!-- Add a row per new package. Casks/<name>.rb for apps, Formula/<name>.rb for CLIs. -->
+
+## Notes
+
+- The `sync-pathguard` cask clears the quarantine flag after install, since the
+  app is currently **unsigned** (Gatekeeper would otherwise block it).
+
+## Maintainer
+
+On each upstream release, bump `version` + `sha256` in the relevant `Casks/` or
+`Formula/` file. For sync-pathguard:
 
 ```bash
 VER=0.1.0
@@ -28,6 +40,3 @@ for f in Sync-Pathguard-macos-arm64.zip Sync-Pathguard-macos-amd64.zip \
   echo "$f  $(curl -sL "$base/$f" | shasum -a 256 | cut -d' ' -f1)"
 done
 ```
-
-> The `REPLACE_WITH_*` placeholders must be filled from a real release before
-> `brew install` works.
