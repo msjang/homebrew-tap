@@ -1,4 +1,4 @@
-cask "sync-pathguard" do
+cask "pathguard" do
   version "0.1.0"
   arch arm: "arm64", intel: "amd64"
 
@@ -9,26 +9,26 @@ cask "sync-pathguard" do
     sha256 "REPLACE_WITH_amd64_zip_sha256"
   end
 
-  url "https://github.com/msjang/sync-pathguard/releases/download/v#{version}/Sync-Pathguard-macos-#{arch}.zip"
-  name "Sync Pathguard"
+  url "https://github.com/msjang/pathguard/releases/download/v#{version}/Pathguard-macos-#{arch}.zip"
+  name "Pathguard"
   desc "Menu-bar guard for NFD filename lengths that break cloud/NAS sync"
-  homepage "https://github.com/msjang/sync-pathguard"
+  homepage "https://github.com/msjang/pathguard"
 
   livecheck do
     url :url
     strategy :github_latest
   end
 
-  app "Sync Pathguard.app"
+  app "Pathguard.app"
 
   # Stopgap for the unsigned build: clear the quarantine flag so Gatekeeper
   # allows launch. Remove once the app is signed & notarized.
   postflight do
     system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Sync Pathguard.app"]
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Pathguard.app"]
   end
 
   zap trash: [
-    "~/Library/Application Support/sync-pathguard",
+    "~/Library/Application Support/pathguard",
   ]
 end

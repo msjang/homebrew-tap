@@ -1,26 +1,26 @@
 class Pathguard < Formula
   desc "CLI that flags NFD filename/path byte-lengths risking cloud/NAS sync"
-  homepage "https://github.com/msjang/sync-pathguard"
+  homepage "https://github.com/msjang/pathguard"
   version "0.1.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/msjang/sync-pathguard/releases/download/v#{version}/pathguard-macos-arm64.zip"
+      url "https://github.com/msjang/pathguard/releases/download/v#{version}/pathguard-macos-arm64.zip"
       sha256 "REPLACE_WITH_macos_arm64_sha256"
     end
     on_intel do
-      url "https://github.com/msjang/sync-pathguard/releases/download/v#{version}/pathguard-macos-amd64.zip"
+      url "https://github.com/msjang/pathguard/releases/download/v#{version}/pathguard-macos-amd64.zip"
       sha256 "REPLACE_WITH_macos_amd64_sha256"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/msjang/sync-pathguard/releases/download/v#{version}/pathguard-linux-arm64.tar.gz"
+      url "https://github.com/msjang/pathguard/releases/download/v#{version}/pathguard-linux-arm64.tar.gz"
       sha256 "REPLACE_WITH_linux_arm64_sha256"
     end
     on_intel do
-      url "https://github.com/msjang/sync-pathguard/releases/download/v#{version}/pathguard-linux-amd64.tar.gz"
+      url "https://github.com/msjang/pathguard/releases/download/v#{version}/pathguard-linux-amd64.tar.gz"
       sha256 "REPLACE_WITH_linux_amd64_sha256"
     end
   end
