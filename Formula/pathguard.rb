@@ -4,14 +4,8 @@ class Pathguard < Formula
   version "0.1.0"
 
   on_macos do
-    on_arm do
-      url "https://github.com/msjang/pathguard/releases/download/v#{version}/pathguard-macos-arm64.zip"
-      sha256 "REPLACE_WITH_macos_arm64_sha256"
-    end
-    on_intel do
-      url "https://github.com/msjang/pathguard/releases/download/v#{version}/pathguard-macos-amd64.zip"
-      sha256 "REPLACE_WITH_macos_amd64_sha256"
-    end
+    url "https://github.com/msjang/pathguard/releases/download/v#{version}/pathguard-macos-universal.zip"
+    sha256 "REPLACE_WITH_macos_universal_sha256"
   end
 
   on_linux do
