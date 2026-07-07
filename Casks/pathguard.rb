@@ -1,6 +1,6 @@
 cask "pathguard" do
   version "0.1.0"
-  sha256 "REPLACE_WITH_Pathguard-macos-universal_zip_sha256"
+  sha256 "e7ddee0c0859477c22006030d9ad1fafd01ad557e53d2cdacd86e65d37458f95"
 
   url "https://github.com/msjang/pathguard/releases/download/v#{version}/Pathguard-macos-universal.zip"
   name "Pathguard"
