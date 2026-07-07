@@ -4,7 +4,7 @@ class Pathguard < Formula
   version "0.1.0"
 
   on_macos do
-    url "https://github.com/msjang/pathguard/releases/download/v#{version}/pathguard-macos-universal.zip"
+    url "https://github.com/msjang/pathguard/releases/download/v#{version}/pathguard-cli-macos-universal.zip"
     sha256 "REPLACE_WITH_macos_universal_sha256"
   end
 

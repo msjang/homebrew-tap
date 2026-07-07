@@ -34,7 +34,7 @@ On each upstream release, bump `version` + `sha256` in the relevant `Casks/` or
 ```bash
 VER=0.1.0
 base="https://github.com/msjang/pathguard/releases/download/v$VER"
-for f in Pathguard-macos-universal.zip pathguard-macos-universal.zip \
+for f in Pathguard-macos-universal.zip pathguard-cli-macos-universal.zip \
          pathguard-linux-amd64.tar.gz pathguard-linux-arm64.tar.gz; do
   echo "$f  $(curl -sL "$base/$f" | shasum -a 256 | cut -d' ' -f1)"
 done
