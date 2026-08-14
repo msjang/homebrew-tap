@@ -9,7 +9,7 @@ cask "nextboot" do
 
   # bless --nextonly is an EFI facility; Apple Silicon has no equivalent.
   depends_on arch: :x86_64
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   livecheck do
     url :url
