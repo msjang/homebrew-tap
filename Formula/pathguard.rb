@@ -1,21 +1,21 @@
 class Pathguard < Formula
   desc "CLI that flags NFD filename/path byte-lengths risking cloud/NAS sync"
   homepage "https://github.com/msjang/pathguard"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     url "https://github.com/msjang/pathguard/releases/download/v#{version}/pathguard-cli-macos-universal.zip"
-    sha256 "f5dee086c84140d2a95eea83074fd39f23e0af1171693b5d7952e6827c82cddd"
+    sha256 "32b065a72672f3975c790bfd5dfcd3a1187a963feccc0508d2911be79f720b95"
   end
 
   on_linux do
     on_arm do
       url "https://github.com/msjang/pathguard/releases/download/v#{version}/pathguard-linux-arm64.tar.gz"
-      sha256 "101ab1caea4d459867d9f83dea8b96881e92ea0b4724a008fbb5b2559c072f9a"
+      sha256 "d10e2ba20cb62b2a734e3e0a96f987c099c6b1d69e6501d7ad252c990f08fb45"
     end
     on_intel do
       url "https://github.com/msjang/pathguard/releases/download/v#{version}/pathguard-linux-amd64.tar.gz"
-      sha256 "c5550ca8cabb19505aa886d5c7c32a5a3cf077fd150c1b62ff78ab42e3b716fd"
+      sha256 "c0cef7d4343b425126fb9072f79a024a96a5de7357460d0e4ae826594b713e5f"
     end
   end
 

@@ -1,6 +1,6 @@
 cask "pathguard" do
-  version "0.1.1"
-  sha256 "450a41ac54ff990c6570668a622d1644a833c22e13e7f9f1854f742377e68b6b"
+  version "0.1.2"
+  sha256 "358c7d6fc816a3126e7636c1933d30e098a7e4980020b73d41d2f936e1ad4f6f"
 
   url "https://github.com/msjang/pathguard/releases/download/v#{version}/Pathguard-macos-universal.zip"
   name "Pathguard"
@@ -21,7 +21,11 @@ cask "pathguard" do
                    args: ["-dr", "com.apple.quarantine", "#{appdir}/Pathguard.app"]
   end
 
+  # The app can install a LaunchAgent (Launch at login) and, since 0.1.2, the
+  # config may live in ~/.config instead of Application Support — zap both.
   zap trash: [
+    "~/.config/pathguard",
     "~/Library/Application Support/pathguard",
+    "~/Library/LaunchAgents/io.github.msjang.pathguard.plist",
   ]
 end
